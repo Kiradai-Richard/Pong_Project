@@ -1,6 +1,6 @@
 #include<iostream>
 #include<conio.h>
-#include "pongClass.h"
+#include "ballClass.h"
 pong::pong()
 :height(20),width(29),X_Cord(10),player_size(5)
 {
@@ -90,4 +90,8 @@ void pong::detect_keyboard()
     default :
         break;
     }
+}
+bool pong::GameOver()
+{
+    return false;
 }

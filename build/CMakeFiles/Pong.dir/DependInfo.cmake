@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/Richard/source/Repos/Pong_Project/BallClass.cpp" "CMakeFiles/Pong.dir/BallClass.cpp.obj" "gcc" "CMakeFiles/Pong.dir/BallClass.cpp.obj.d"
   "C:/Users/Richard/source/Repos/Pong_Project/PongClass.cpp" "CMakeFiles/Pong.dir/PongClass.cpp.obj" "gcc" "CMakeFiles/Pong.dir/PongClass.cpp.obj.d"
   "C:/Users/Richard/source/Repos/Pong_Project/main.cpp" "CMakeFiles/Pong.dir/main.cpp.obj" "gcc" "CMakeFiles/Pong.dir/main.cpp.obj.d"
   )

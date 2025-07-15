@@ -129,6 +129,30 @@ Pong/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/build
 .PHONY : Pong/fast
 
+BallClass.obj: BallClass.cpp.obj
+.PHONY : BallClass.obj
+
+# target to build an object file
+BallClass.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/BallClass.cpp.obj
+.PHONY : BallClass.cpp.obj
+
+BallClass.i: BallClass.cpp.i
+.PHONY : BallClass.i
+
+# target to preprocess a source file
+BallClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/BallClass.cpp.i
+.PHONY : BallClass.cpp.i
+
+BallClass.s: BallClass.cpp.s
+.PHONY : BallClass.s
+
+# target to generate assembly for a file
+BallClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/BallClass.cpp.s
+.PHONY : BallClass.cpp.s
+
 PongClass.obj: PongClass.cpp.obj
 .PHONY : PongClass.obj
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Pong"
+	@echo "... BallClass.obj"
+	@echo "... BallClass.i"
+	@echo "... BallClass.s"
 	@echo "... PongClass.obj"
 	@echo "... PongClass.i"
 	@echo "... PongClass.s"

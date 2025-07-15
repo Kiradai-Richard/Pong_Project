@@ -100,20 +100,36 @@ CMakeFiles/Pong.dir/PongClass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Pong.dir/PongClass.cpp.s"
 	C:/msys64/mingw64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Richard/source/Repos/Pong_Project/PongClass.cpp -o CMakeFiles/Pong.dir/PongClass.cpp.s
 
+CMakeFiles/Pong.dir/BallClass.cpp.obj: CMakeFiles/Pong.dir/flags.make
+CMakeFiles/Pong.dir/BallClass.cpp.obj: C:/Users/Richard/source/Repos/Pong_Project/BallClass.cpp
+CMakeFiles/Pong.dir/BallClass.cpp.obj: CMakeFiles/Pong.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:/Users/Richard/source/Repos/Pong_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Pong.dir/BallClass.cpp.obj"
+	C:/msys64/mingw64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Pong.dir/BallClass.cpp.obj -MF CMakeFiles/Pong.dir/BallClass.cpp.obj.d -o CMakeFiles/Pong.dir/BallClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/BallClass.cpp
+
+CMakeFiles/Pong.dir/BallClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Pong.dir/BallClass.cpp.i"
+	C:/msys64/mingw64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:/Users/Richard/source/Repos/Pong_Project/BallClass.cpp > CMakeFiles/Pong.dir/BallClass.cpp.i
+
+CMakeFiles/Pong.dir/BallClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Pong.dir/BallClass.cpp.s"
+	C:/msys64/mingw64/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:/Users/Richard/source/Repos/Pong_Project/BallClass.cpp -o CMakeFiles/Pong.dir/BallClass.cpp.s
+
 # Object files for target Pong
 Pong_OBJECTS = \
 "CMakeFiles/Pong.dir/main.cpp.obj" \
-"CMakeFiles/Pong.dir/PongClass.cpp.obj"
+"CMakeFiles/Pong.dir/PongClass.cpp.obj" \
+"CMakeFiles/Pong.dir/BallClass.cpp.obj"
 
 # External object files for target Pong
 Pong_EXTERNAL_OBJECTS =
 
 Pong.exe: CMakeFiles/Pong.dir/main.cpp.obj
 Pong.exe: CMakeFiles/Pong.dir/PongClass.cpp.obj
+Pong.exe: CMakeFiles/Pong.dir/BallClass.cpp.obj
 Pong.exe: CMakeFiles/Pong.dir/build.make
 Pong.exe: CMakeFiles/Pong.dir/linkLibs.rsp
 Pong.exe: CMakeFiles/Pong.dir/objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Richard/source/Repos/Pong_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Pong.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:/Users/Richard/source/Repos/Pong_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Pong.exe"
 	"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E rm -f CMakeFiles/Pong.dir/objects.a
 	C:/msys64/mingw64/bin/ar.exe qc CMakeFiles/Pong.dir/objects.a @CMakeFiles/Pong.dir/objects1.rsp
 	C:/msys64/mingw64/bin/g++.exe -g -Wl,--whole-archive CMakeFiles/Pong.dir/objects.a -Wl,--no-whole-archive -o Pong.exe -Wl,--out-implib,libPong.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/Pong.dir/linkLibs.rsp
