@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/Richard/source/Repos/Pong_Project/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe   -g -o CMakeFiles/Pong.dir/main.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/main.cpp",
+  "file": "C:/Users/Richard/source/Repos/Pong_Project/main.cpp",
+  "output": "CMakeFiles/Pong.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Richard/source/Repos/Pong_Project/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe   -g -o CMakeFiles/Pong.dir/PongClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/PongClass.cpp",
+  "file": "C:/Users/Richard/source/Repos/Pong_Project/PongClass.cpp",
+  "output": "CMakeFiles/Pong.dir/PongClass.cpp.obj"
+}
+]
