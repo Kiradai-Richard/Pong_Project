@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cstdlib>
 #include "ballClass.h"
+#include<Windows.h>
 ball::ball()
 :x_ball(10),y_ball(15)
 {
@@ -25,15 +26,36 @@ void ball::ball_launch()
     }
     x_ball+=rand_x;
     y_ball+=rand_y;
+    ball_movement(rand_x,rand_y);
 
 }
 void ball::print_ball()
 {
+     Sleep(2000);
     map[x_ball][y_ball]='@';
 }
-void ball::ball_movement()
+void ball::ball_movement(int movement_x,int movement_y)
 {
+    bool Is_GameOver=false;
+    while(!Is_GameOver)
+    {
+        
+            x_ball+=movement_x;
+            y_ball+=movement_y;
+            
+        
+        functions_calls();
+    }
 
+}
+void ball:: functions_calls()
+{
+     print_ball();
+     player();
+     detect_keyboard();
+     map_print();
+     check_colision();
+     map_update();
 }
 void ball::check_colision()
 {

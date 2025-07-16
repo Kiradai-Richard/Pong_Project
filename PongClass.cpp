@@ -78,8 +78,13 @@ void pong::pong_movement(int movement)
 }
 void pong::detect_keyboard()
 {
-    int movement=_getch();
-    switch (movement)
+    int current_movement,upcoming_movement;
+    if(_kbhit())
+    {
+        upcoming_movement=_getch();
+    }
+    current_movement=upcoming_movement;
+    switch (current_movement)
     {
     case 'w':
         pong_movement(-1);
