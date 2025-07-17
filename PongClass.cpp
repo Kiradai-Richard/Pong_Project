@@ -1,14 +1,20 @@
 #include<iostream>
 #include<conio.h>
+#include<chrono>
+#include<thread>
 #include "ballClass.h"
+char pong::m_map[20][30];
+int const pong::m_height(20);
+int const pong::m_width(29);
+int const pong::m_player_size(5);
 pong::pong()
-:height(20),width(29),X_Cord(10),player_size(5)
+:m_XCord(10)
 {
-    for(int i=0;i<height;++i)
+    for(int i=0;i<m_height;++i)
     {
         for(int j=0;j<30;++j)
         {
-            map[i][j]=' ';
+            m_map[i][j]=' ';
         }
     }
 }
@@ -17,62 +23,64 @@ pong::~pong(){
 }
 void pong::map_update()
 {
-    for(int i=0;i<height;++i)
+    for(int i=0;i<m_height;++i)
     {
         for(int j=0;j<30;++j)
         {
             if(j==15)
             {
-                map[i][j]='#';
+                m_map[i][j]='#';
             }
             else
             {
-                map[i][j]=' ';
+                m_map[i][j]=' ';
             }
         }
     }
 }
-void pong::map_print()const
+    void pong::map_print()
 {
-     system("cls");
-    for(int i=0;i<height;++i)
-    {
-        for(int j=0;j<30;++j)
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+        system("cls");
+        for(int i=0;i<m_height;++i)
         {
-            if(map[i][j]=='#' || map[i][j]=='|' || map[i][j]=='@')
-                std::cout <<map[i][j];
-            else
-                std::cout << " ";
+            for(int j=0;j<30;++j)
+            {
+                if(m_map[i][j]=='#' || m_map[i][j]=='|' || m_map[i][j]=='@')
+                    std::cout <<m_map[i][j];
+                 else    
+                    std::cout << " ";
+            }
+            std::cout <<"\n";
         }
-        std::cout <<"\n";
-    }
 }
 void pong::player()
 {
    
-    for(int i=0;i<player_size;++i)
+    for(int i=0;i<m_player_size;++i)
     {
-        map[X_Cord+i][width]='|';
+        m_map[m_XCord+i][m_width]='|';
     }
 }
 void pong::pong_movement(int movement)
 {
-    if((X_Cord==15 && movement==1) || ( X_Cord==0 && movement== -1 ))
+    if((m_XCord==15 && movement==1) || ( m_XCord==0 && movement== -1 ))
        {
-        X_Cord=X_Cord;
+        m_XCord=m_XCord;
        }
     else
     {
-        X_Cord+=movement;
+        m_XCord+=movement;
         if(movement>0)
         {
-            map[X_Cord+player_size-1][width]='|';
-            map[X_Cord-1][width]=' ';
+            m_map[m_XCord+m_player_size-1][m_width]='|'; 
+            m_map[m_XCord-1][m_width]=' ';
         }
         else
         {
-            map[X_Cord][width]='|';
-            map[X_Cord+player_size][width]=' ';   
+            m_map[m_XCord][m_width]='|';
+            m_map[m_XCord+m_player_size][m_width]=' ';   
         }
     }
 }

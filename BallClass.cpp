@@ -1,9 +1,11 @@
 #include<iostream>
 #include<cstdlib>
+#include<chrono>
+#include<thread>
 #include "ballClass.h"
-#include<Windows.h>
+int ball:: m_Xball(10);
+int ball:: m_Yball(15);
 ball::ball()
-:x_ball(10),y_ball(15)
 {
     ball_launch();
 }
@@ -21,41 +23,39 @@ void ball::ball_launch()
         rand_x=-1;
     }
     if(rand_y==0)
-    {
+    { 
         rand_y=-1;
     }
-    x_ball+=rand_x;
-    y_ball+=rand_y;
+    m_Xball+=rand_x;
+    m_Yball+=rand_y;
     ball_movement(rand_x,rand_y);
 
 }
 void ball::print_ball()
 {
-     Sleep(2000);
-    map[x_ball][y_ball]='@';
+    std::this_thread::sleep_for(std::chrono::milliseconds(16));
+    m_map[m_Xball][m_Yball]='@';
 }
 void ball::ball_movement(int movement_x,int movement_y)
 {
     bool Is_GameOver=false;
     while(!Is_GameOver)
     {
-        
-            x_ball+=movement_x;
-            y_ball+=movement_y;
-            
-        
-        functions_calls();
+            m_Xball+=movement_x;
+            m_Yball+=movement_y;
+            functions_calls();
     }
-
 }
 void ball:: functions_calls()
 {
-     print_ball();
+    print_ball();
      player();
      detect_keyboard();
      map_print();
      check_colision();
      map_update();
+    
+   
 }
 void ball::check_colision()
 {

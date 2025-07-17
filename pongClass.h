@@ -1,14 +1,14 @@
 #pragma once
 class pong{
     protected:
-    char map[20][30];
-    int const height,width,player_size;
-    int X_Cord;
+    static char m_map[20][30];
+    static const int m_height,m_width,m_player_size;
+    int m_XCord;
     public:
     pong();
     ~pong();
-    void map_update();
-    void map_print()const;
+    static void map_update();
+    static void map_print();
     void player();
     void pong_movement(int);
     void detect_keyboard();
