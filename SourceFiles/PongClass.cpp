@@ -3,16 +3,17 @@
 #include<chrono>
 #include<thread>
 #include "ballClass.h"
-char pong::m_map[20][30];
+char pong::m_map[20][31];
 int const pong::m_height(20);
-int const pong::m_width(29);
-int const pong::m_player_size(5);
+int const pong::m_width(31);
+int const pong::m_padSize(5);
+int const pong::m_YpadCoord(29);
 pong::pong()
-:m_XCord(10)
+:m_XpadCoord(10)
 {
     for(int i=0;i<m_height;++i)
     {
-        for(int j=0;j<30;++j)
+        for(int j=0;j<m_width;++j)
         {
             m_map[i][j]=' ';
         }
@@ -25,7 +26,7 @@ void pong::map_update()
 {
     for(int i=0;i<m_height;++i)
     {
-        for(int j=0;j<30;++j)
+        for(int j=0;j<m_width;++j)
         {
             if(j==15)
             {
@@ -45,7 +46,7 @@ void pong::map_update()
         system("cls");
         for(int i=0;i<m_height;++i)
         {
-            for(int j=0;j<30;++j)
+            for(int j=0;j<m_width;++j)
             {
                 if(m_map[i][j]=='#' || m_map[i][j]=='|' || m_map[i][j]=='@')
                     std::cout <<m_map[i][j];
@@ -55,32 +56,32 @@ void pong::map_update()
             std::cout <<"\n";
         }
 }
-void pong::player()
+void pong::paddles()
 {
    
-    for(int i=0;i<m_player_size;++i)
+    for(int i=0;i<m_padSize;++i)
     {
-        m_map[m_XCord+i][m_width]='|';
+        m_map[m_XpadCoord+i][m_YpadCoord]='|';
     }
 }
 void pong::pong_movement(int movement)
 {
-    if((m_XCord==15 && movement==1) || ( m_XCord==0 && movement== -1 ))
+    if((m_XpadCoord==15 && movement==1) || ( m_XpadCoord==0 && movement== -1 ))
        {
-        m_XCord=m_XCord;
+        m_XpadCoord=m_XpadCoord;
        }
     else
     {
-        m_XCord+=movement;
+        m_XpadCoord+=movement;
         if(movement>0)
         {
-            m_map[m_XCord+m_player_size-1][m_width]='|'; 
-            m_map[m_XCord-1][m_width]=' ';
+            m_map[m_XpadCoord+m_padSize-1][m_YpadCoord]='|'; 
+            m_map[m_XpadCoord-1][m_YpadCoord]=' ';
         }
         else
         {
-            m_map[m_XCord][m_width]='|';
-            m_map[m_XCord+m_player_size][m_width]=' ';   
+            m_map[m_XpadCoord][m_YpadCoord]='|';
+            m_map[m_XpadCoord+m_padSize][m_YpadCoord]=' ';   
         }
     }
 }
@@ -103,8 +104,4 @@ void pong::detect_keyboard()
     default :
         break;
     }
-}
-bool pong::GameOver()
-{
-    return false;
 }

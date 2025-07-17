@@ -3,12 +3,14 @@
 class ball:public pong{
 static int m_Xball;
 static int m_Yball;
+static int m_XcurrentMove;
+static int m_YcurrentMove;
 public:
 ball();
 ~ball();
-void ball_launch();
+ void ball_launch();
 static void print_ball();
-void ball_movement(int,int);
+void ball_movement();
 static void check_colision();
-void functions_calls();
+static bool GameOver_Check();
 };

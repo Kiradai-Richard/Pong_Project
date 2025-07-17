@@ -1,20 +1,20 @@
 [
 {
   "directory": "C:/Users/Richard/source/Repos/Pong_Project/build",
-  "command": "C:/msys64/mingw64/bin/g++.exe   -g -o CMakeFiles/Pong.dir/main.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/main.cpp",
-  "file": "C:/Users/Richard/source/Repos/Pong_Project/main.cpp",
-  "output": "CMakeFiles/Pong.dir/main.cpp.obj"
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/Pong.dir/includes_CXX.rsp -g -o CMakeFiles/Pong.dir/SourceFiles/main.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/main.cpp",
+  "file": "C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/main.cpp",
+  "output": "CMakeFiles/Pong.dir/SourceFiles/main.cpp.obj"
 },
 {
   "directory": "C:/Users/Richard/source/Repos/Pong_Project/build",
-  "command": "C:/msys64/mingw64/bin/g++.exe   -g -o CMakeFiles/Pong.dir/PongClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/PongClass.cpp",
-  "file": "C:/Users/Richard/source/Repos/Pong_Project/PongClass.cpp",
-  "output": "CMakeFiles/Pong.dir/PongClass.cpp.obj"
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/Pong.dir/includes_CXX.rsp -g -o CMakeFiles/Pong.dir/SourceFiles/BallClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/BallClass.cpp",
+  "file": "C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/BallClass.cpp",
+  "output": "CMakeFiles/Pong.dir/SourceFiles/BallClass.cpp.obj"
 },
 {
   "directory": "C:/Users/Richard/source/Repos/Pong_Project/build",
-  "command": "C:/msys64/mingw64/bin/g++.exe   -g -o CMakeFiles/Pong.dir/BallClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/BallClass.cpp",
-  "file": "C:/Users/Richard/source/Repos/Pong_Project/BallClass.cpp",
-  "output": "CMakeFiles/Pong.dir/BallClass.cpp.obj"
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/Pong.dir/includes_CXX.rsp -g -o CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/PongClass.cpp",
+  "file": "C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/PongClass.cpp",
+  "output": "CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.obj"
 }
 ]

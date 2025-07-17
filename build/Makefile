@@ -129,77 +129,77 @@ Pong/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/build
 .PHONY : Pong/fast
 
-BallClass.obj: BallClass.cpp.obj
-.PHONY : BallClass.obj
+SourceFiles/BallClass.obj: SourceFiles/BallClass.cpp.obj
+.PHONY : SourceFiles/BallClass.obj
 
 # target to build an object file
-BallClass.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/BallClass.cpp.obj
-.PHONY : BallClass.cpp.obj
+SourceFiles/BallClass.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/BallClass.cpp.obj
+.PHONY : SourceFiles/BallClass.cpp.obj
 
-BallClass.i: BallClass.cpp.i
-.PHONY : BallClass.i
+SourceFiles/BallClass.i: SourceFiles/BallClass.cpp.i
+.PHONY : SourceFiles/BallClass.i
 
 # target to preprocess a source file
-BallClass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/BallClass.cpp.i
-.PHONY : BallClass.cpp.i
+SourceFiles/BallClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/BallClass.cpp.i
+.PHONY : SourceFiles/BallClass.cpp.i
 
-BallClass.s: BallClass.cpp.s
-.PHONY : BallClass.s
+SourceFiles/BallClass.s: SourceFiles/BallClass.cpp.s
+.PHONY : SourceFiles/BallClass.s
 
 # target to generate assembly for a file
-BallClass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/BallClass.cpp.s
-.PHONY : BallClass.cpp.s
+SourceFiles/BallClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/BallClass.cpp.s
+.PHONY : SourceFiles/BallClass.cpp.s
 
-PongClass.obj: PongClass.cpp.obj
-.PHONY : PongClass.obj
+SourceFiles/PongClass.obj: SourceFiles/PongClass.cpp.obj
+.PHONY : SourceFiles/PongClass.obj
 
 # target to build an object file
-PongClass.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/PongClass.cpp.obj
-.PHONY : PongClass.cpp.obj
+SourceFiles/PongClass.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.obj
+.PHONY : SourceFiles/PongClass.cpp.obj
 
-PongClass.i: PongClass.cpp.i
-.PHONY : PongClass.i
+SourceFiles/PongClass.i: SourceFiles/PongClass.cpp.i
+.PHONY : SourceFiles/PongClass.i
 
 # target to preprocess a source file
-PongClass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/PongClass.cpp.i
-.PHONY : PongClass.cpp.i
+SourceFiles/PongClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.i
+.PHONY : SourceFiles/PongClass.cpp.i
 
-PongClass.s: PongClass.cpp.s
-.PHONY : PongClass.s
+SourceFiles/PongClass.s: SourceFiles/PongClass.cpp.s
+.PHONY : SourceFiles/PongClass.s
 
 # target to generate assembly for a file
-PongClass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/PongClass.cpp.s
-.PHONY : PongClass.cpp.s
+SourceFiles/PongClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.s
+.PHONY : SourceFiles/PongClass.cpp.s
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+SourceFiles/main.obj: SourceFiles/main.cpp.obj
+.PHONY : SourceFiles/main.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+SourceFiles/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/main.cpp.obj
+.PHONY : SourceFiles/main.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+SourceFiles/main.i: SourceFiles/main.cpp.i
+.PHONY : SourceFiles/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/main.cpp.i
-.PHONY : main.cpp.i
+SourceFiles/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/main.cpp.i
+.PHONY : SourceFiles/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+SourceFiles/main.s: SourceFiles/main.cpp.s
+.PHONY : SourceFiles/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/main.cpp.s
-.PHONY : main.cpp.s
+SourceFiles/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/main.cpp.s
+.PHONY : SourceFiles/main.cpp.s
 
 # Help Target
 help:
@@ -210,15 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Pong"
-	@echo "... BallClass.obj"
-	@echo "... BallClass.i"
-	@echo "... BallClass.s"
-	@echo "... PongClass.obj"
-	@echo "... PongClass.i"
-	@echo "... PongClass.s"
-	@echo "... main.obj"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... SourceFiles/BallClass.obj"
+	@echo "... SourceFiles/BallClass.i"
+	@echo "... SourceFiles/BallClass.s"
+	@echo "... SourceFiles/PongClass.obj"
+	@echo "... SourceFiles/PongClass.i"
+	@echo "... SourceFiles/PongClass.s"
+	@echo "... SourceFiles/main.obj"
+	@echo "... SourceFiles/main.i"
+	@echo "... SourceFiles/main.s"
 .PHONY : help
 
 

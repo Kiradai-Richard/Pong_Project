@@ -1,5 +1,5 @@
-CMakeFiles/Pong.dir/PongClass.cpp.obj: \
- C:/Users/Richard/source/Repos/Pong_Project/PongClass.cpp \
+CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.obj: \
+ C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/PongClass.cpp \
  C:/msys64/mingw64/include/c++/14.2.0/iostream \
  C:/msys64/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -153,5 +153,5 @@ CMakeFiles/Pong.dir/PongClass.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/std_thread.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/this_thread_sleep.h \
- C:/Users/Richard/source/Repos/Pong_Project/ballClass.h \
- C:/Users/Richard/source/Repos/Pong_Project/pongClass.h
+ C:/Users/Richard/source/Repos/Pong_Project/HeaderFiles/ballClass.h \
+ C:/Users/Richard/source/Repos/Pong_Project/HeaderFiles/pongClass.h
