@@ -10,6 +10,7 @@ extern pong computer;
 extern pong player;
 ball::ball()
 {
+    srand((int)time(0));
     ball_launch();
 }
 ball::~ball()
@@ -43,7 +44,6 @@ void ball::ball_movement()
 }
 void ball::check_colision()
 {
-    if(GameOver_Check)
   if( m_map[m_Xball][m_Yball]=='|'|| m_map[m_Xball][m_Yball]=='|')
   {
         if(m_XcurrentMove==0)
@@ -73,13 +73,13 @@ void ball::GamePlay()
     while(!GameOver_Check())
     {   map_update();
         player.paddles();
-        computer.paddles();
         player.detect_keyboard();
-        computer.computer_algorithm();
-        print_ball();
+        computer.paddles();
+        std::thread(computer.computer_algorithm).detach();
+        std::thread(print_ball).detach();
         ball_movement();
         check_colision();
-        map_print();
+        std::thread(map_print).join();
     }
 }
 

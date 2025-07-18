@@ -13,6 +13,7 @@ int const pong::m_padSize(5);
 pong::pong()
 :m_XpadCoord(10),m_YpadCoord(29)
 {
+    srand((int)time(0));
     for(int i=0;i<m_height;++i)
     {
         for(int j=0;j<m_width;++j)
@@ -24,7 +25,7 @@ pong::pong()
 pong::pong(int x, int y)
 :m_XpadCoord(x),m_YpadCoord(y)
 {
-
+srand((int)time(0));
 }
 pong::~pong(){
     std::cout <<"YOU DESTROYED OBJECT";
@@ -118,19 +119,26 @@ void pong::detect_keyboard()
 }
 void pong::computer_algorithm()
 {
-
-    float current_distance=( abs ( computer.m_XpadCoord * Ball.m_Xball + computer.m_LastPadTile * Ball.m_Yball ) / (sqrt ( pow ( computer.m_XpadCoord , 2 ) + pow ( computer.m_LastPadTile ,2 ) ) ) );
-    float potential_up_distance=( abs ( ( computer.m_XpadCoord + 1 ) * Ball.m_Xball + ( 1 + computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord + 1 ) , 2 ) + pow ( (computer.m_LastPadTile + 1 ) ,2 ) ) ) );
-    float potential_down_distance=( abs ( ( computer.m_XpadCoord - 1 ) * Ball.m_Xball + ( 1 - computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord - 1 ) , 2 ) + pow ( (computer.m_LastPadTile - 1 ) ,2 ) ) ) );
-    if(current_distance >=potential_up_distance)
+  
+    
+    std::this_thread::sleep_for(std::chrono::milliseconds(16));
+    /*float current_distance=( computer.m_XpadCoord * Ball.m_Xball + computer.m_LastPadTile * Ball.m_Yball ) / (sqrt ( pow ( computer.m_XpadCoord , 2 ) + pow ( computer.m_LastPadTile ,2 ) ) );
+    float potential_up_distance= ( ( computer.m_XpadCoord + 1 ) * Ball.m_Xball + ( 1 + computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord + 1 ) , 2 ) + pow ( (computer.m_LastPadTile + 1 ) ,2 ) ) );
+    float potential_down_distance= ( ( computer.m_XpadCoord - 1 ) * Ball.m_Xball + ( 1 - computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord - 1 ) , 2 ) + pow ( (computer.m_LastPadTile - 1 ) ,2 ) ) );*/
+    if( Ball.m_Xball< computer.m_XpadCoord)
     {
        
-          computer.pong_movement(-1);
+          computer.computer_movement(-1);
     }
-    else if(current_distance > potential_down_distance)
+    else if(Ball.m_Xball > computer.m_XpadCoord-4)
     {
-          computer.pong_movement(1);
+          computer.computer_movement(1);
     }
     
 } 
+void pong::computer_movement(int movement)
+{
+     std::this_thread::sleep_for(std::chrono::milliseconds(16));
+     computer.pong_movement(movement);
+}
 

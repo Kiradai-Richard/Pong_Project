@@ -15,5 +15,6 @@ class pong{
     void pong_movement(int);
     void detect_keyboard();
     static void computer_algorithm();
+    void computer_movement(int);
        
 };
