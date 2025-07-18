@@ -2,7 +2,10 @@
 #include<conio.h>
 #include<chrono>
 #include<thread>
+#include<cmath>
 #include "ballClass.h"
+extern ball Ball;
+extern pong computer;
 char pong::m_map[20][31];
 int const pong::m_height(20);
 int const pong::m_width(31);
@@ -17,6 +20,11 @@ pong::pong()
             m_map[i][j]=' ';
         }
     }
+}
+pong::pong(int x, int y)
+:m_XpadCoord(x),m_YpadCoord(y)
+{
+
 }
 pong::~pong(){
     std::cout <<"YOU DESTROYED OBJECT";
@@ -61,6 +69,10 @@ void pong::paddles()
     for(int i=0;i<m_padSize;++i)
     {
         m_map[m_XpadCoord+i][m_YpadCoord]='|';
+        if(i==m_padSize-1)
+        {
+            m_LastPadTile=m_XpadCoord+i;
+        }
     }
 }
 void pong::pong_movement(int movement)
@@ -104,3 +116,21 @@ void pong::detect_keyboard()
         break;
     }
 }
+void pong::computer_algorithm()
+{
+
+    float current_distance=( abs ( computer.m_XpadCoord * Ball.m_Xball + computer.m_LastPadTile * Ball.m_Yball ) / (sqrt ( pow ( computer.m_XpadCoord , 2 ) + pow ( computer.m_LastPadTile ,2 ) ) ) );
+    float potential_up_distance=( abs ( ( computer.m_XpadCoord + 1 ) * Ball.m_Xball + ( 1 + computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord + 1 ) , 2 ) + pow ( (computer.m_LastPadTile + 1 ) ,2 ) ) ) );
+    float potential_down_distance=( abs ( ( computer.m_XpadCoord - 1 ) * Ball.m_Xball + ( 1 - computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord - 1 ) , 2 ) + pow ( (computer.m_LastPadTile - 1 ) ,2 ) ) ) );
+    if(current_distance >=potential_up_distance)
+    {
+       
+          computer.pong_movement(-1);
+    }
+    else if(current_distance > potential_down_distance)
+    {
+          computer.pong_movement(1);
+    }
+    
+} 
+

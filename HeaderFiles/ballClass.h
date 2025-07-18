@@ -1,8 +1,9 @@
 #pragma once
 #include "pongClass.h"
 class ball:public pong{
-static int m_XcurrentMove;
-static int m_YcurrentMove;
+protected:
+    static int m_XcurrentMove;
+    static int m_YcurrentMove;
 public:
     static int m_Xball;
     static int m_Yball;

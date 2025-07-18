@@ -6,6 +6,8 @@ int ball:: m_Xball(10);
 int ball:: m_Yball(15);
 int ball:: m_XcurrentMove(0);
 int ball:: m_YcurrentMove(0);
+extern pong computer;
+extern pong player;
 ball::ball()
 {
     ball_launch();
@@ -42,7 +44,7 @@ void ball::ball_movement()
 void ball::check_colision()
 {
     if(GameOver_Check)
-  if( m_map[m_Xball][m_Yball+1]=='|'|| m_map[m_Xball][m_Yball-1]=='|')
+  if( m_map[m_Xball][m_Yball]=='|'|| m_map[m_Xball][m_Yball]=='|')
   {
         if(m_XcurrentMove==0)
             {
@@ -70,8 +72,10 @@ void ball::GamePlay()
 {
     while(!GameOver_Check())
     {   map_update();
-        paddles();
-        detect_keyboard();
+        player.paddles();
+        computer.paddles();
+        player.detect_keyboard();
+        computer.computer_algorithm();
         print_ball();
         ball_movement();
         check_colision();
