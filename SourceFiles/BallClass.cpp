@@ -29,7 +29,6 @@ void ball::ball_launch()
     m_YcurrentMove=rand_y;
     m_Xball+=rand_x;
     m_Yball+=rand_y;
-    ball_movement();
 }
 void ball::print_ball()
 {
@@ -38,17 +37,9 @@ void ball::print_ball()
 }
 void ball::ball_movement()
 {
-    while(!GameOver_Check())
-    {
-            m_Xball+=m_XcurrentMove;
-            m_Yball+=m_YcurrentMove;
-            print_ball();
-            paddles();
-            detect_keyboard();
-            map_print();
-            check_colision();
-            map_update();
-    }
+
+     m_Xball+=m_XcurrentMove;
+     m_Yball+=m_YcurrentMove;
 }
 void ball::check_colision()
 {
@@ -71,9 +62,25 @@ void ball::check_colision()
 }
 bool ball::GameOver_Check()
 {
-    if((m_Yball==0 && m_map[m_Xball][m_Yball]!='|') || (m_Yball==m_YpadCoord && m_map[m_Xball][m_Yball]!='|'))
+    int YpadCoord=29;
+    if((m_Yball==0 && m_map[m_Xball][m_Yball]!='|') || (m_Yball==YpadCoord && m_map[m_Xball][m_Yball]!='|'))
         return true;
     else
         return false;
+}
+void ball::GamePlay()
+{
+    while(!GameOver_Check())
+    {
+        detect_keyboard();
+        print_ball();
+        map_print();
+        paddles();
+        map_print();
+        check_colision();
+        ball_movement();
+        map_update();
+     
+    }
 }
 

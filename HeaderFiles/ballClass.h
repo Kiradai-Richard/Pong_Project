@@ -8,9 +8,10 @@ static int m_YcurrentMove;
 public:
 ball();
 ~ball();
- void ball_launch();
+static void ball_launch();
 static void print_ball();
-void ball_movement();
+static void ball_movement();
 static void check_colision();
 static bool GameOver_Check();
+void GamePlay();
 };

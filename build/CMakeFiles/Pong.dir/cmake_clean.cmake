@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Pong.dir/SourceFiles/AiClass.cpp.obj"
+  "CMakeFiles/Pong.dir/SourceFiles/AiClass.cpp.obj.d"
   "CMakeFiles/Pong.dir/SourceFiles/BallClass.cpp.obj"
   "CMakeFiles/Pong.dir/SourceFiles/BallClass.cpp.obj.d"
   "CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.obj"

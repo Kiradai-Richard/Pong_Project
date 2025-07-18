@@ -4,11 +4,12 @@ int main()
 {
     srand((int)time(0));
      ball player;
-        player.map_update();
+        /*player.map_update();
         player.paddles();
         player.detect_keyboard();
         player.print_ball();
-        player.map_print();
+        player.map_print();*/
+        player.GamePlay();
     
 
 }

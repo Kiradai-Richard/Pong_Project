@@ -129,6 +129,30 @@ Pong/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/build
 .PHONY : Pong/fast
 
+SourceFiles/AiClass.obj: SourceFiles/AiClass.cpp.obj
+.PHONY : SourceFiles/AiClass.obj
+
+# target to build an object file
+SourceFiles/AiClass.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/AiClass.cpp.obj
+.PHONY : SourceFiles/AiClass.cpp.obj
+
+SourceFiles/AiClass.i: SourceFiles/AiClass.cpp.i
+.PHONY : SourceFiles/AiClass.i
+
+# target to preprocess a source file
+SourceFiles/AiClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/AiClass.cpp.i
+.PHONY : SourceFiles/AiClass.cpp.i
+
+SourceFiles/AiClass.s: SourceFiles/AiClass.cpp.s
+.PHONY : SourceFiles/AiClass.s
+
+# target to generate assembly for a file
+SourceFiles/AiClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/SourceFiles/AiClass.cpp.s
+.PHONY : SourceFiles/AiClass.cpp.s
+
 SourceFiles/BallClass.obj: SourceFiles/BallClass.cpp.obj
 .PHONY : SourceFiles/BallClass.obj
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Pong"
+	@echo "... SourceFiles/AiClass.obj"
+	@echo "... SourceFiles/AiClass.i"
+	@echo "... SourceFiles/AiClass.s"
 	@echo "... SourceFiles/BallClass.obj"
 	@echo "... SourceFiles/BallClass.i"
 	@echo "... SourceFiles/BallClass.s"

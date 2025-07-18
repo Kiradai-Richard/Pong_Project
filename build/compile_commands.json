@@ -16,5 +16,11 @@
   "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/Pong.dir/includes_CXX.rsp -g -o CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/PongClass.cpp",
   "file": "C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/PongClass.cpp",
   "output": "CMakeFiles/Pong.dir/SourceFiles/PongClass.cpp.obj"
+},
+{
+  "directory": "C:/Users/Richard/source/Repos/Pong_Project/build",
+  "command": "C:/msys64/mingw64/bin/g++.exe  @CMakeFiles/Pong.dir/includes_CXX.rsp -g -o CMakeFiles/Pong.dir/SourceFiles/AiClass.cpp.obj -c C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/AiClass.cpp",
+  "file": "C:/Users/Richard/source/Repos/Pong_Project/SourceFiles/AiClass.cpp",
+  "output": "CMakeFiles/Pong.dir/SourceFiles/AiClass.cpp.obj"
 }
 ]

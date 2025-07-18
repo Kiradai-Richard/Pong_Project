@@ -7,9 +7,8 @@ char pong::m_map[20][31];
 int const pong::m_height(20);
 int const pong::m_width(31);
 int const pong::m_padSize(5);
-int const pong::m_YpadCoord(29);
 pong::pong()
-:m_XpadCoord(10)
+:m_XpadCoord(10),m_YpadCoord(29)
 {
     for(int i=0;i<m_height;++i)
     {
