@@ -7,9 +7,8 @@ char pong::m_map[20][31];
 int const pong::m_height(20);
 int const pong::m_width(31);
 int const pong::m_padSize(5);
-int const pong::m_YpadCoord(29);
 pong::pong()
-:m_XpadCoord(10)
+:m_XpadCoord(10),m_YpadCoord(29)
 {
     for(int i=0;i<m_height;++i)
     {
@@ -66,7 +65,7 @@ void pong::paddles()
 }
 void pong::pong_movement(int movement)
 {
-    if((m_XpadCoord==15 && movement==1) || ( m_XpadCoord==0 && movement== -1 ))
+    if((m_XpadCoord==14 && movement==1) || ( m_XpadCoord==0 && movement== -1 )) //m_XpadCoord==14 because the body its 5 tiles long and m_XpadCoord==0 because the first tile is the head
        {
         m_XpadCoord=m_XpadCoord;
        }
