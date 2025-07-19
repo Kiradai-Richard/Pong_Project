@@ -6,12 +6,13 @@
 #include "ballClass.h"
 extern ball Ball;
 extern pong computer;
+extern pong player;
 char pong::m_map[20][31];
 int const pong::m_height(20);
 int const pong::m_width(31);
 int const pong::m_padSize(5);
 pong::pong()
-:m_XpadCoord(10),m_YpadCoord(29)
+:m_YpadCoord(10),m_XpadCoord(29),score(0)
 {
     srand((int)time(0));
     for(int i=0;i<m_height;++i)
@@ -23,7 +24,7 @@ pong::pong()
     }
 }
 pong::pong(int x, int y)
-:m_XpadCoord(x),m_YpadCoord(y)
+:m_YpadCoord(x),m_XpadCoord(y),score(0)
 {
 srand((int)time(0));
 }
@@ -69,31 +70,31 @@ void pong::paddles()
    
     for(int i=0;i<m_padSize;++i)
     {
-        m_map[m_XpadCoord+i][m_YpadCoord]='|';
+       m_map[m_YpadCoord+i][m_XpadCoord]='|';//m_map[m_YpadCoord+i][m_XpadCoord]='|'
         if(i==m_padSize-1)
         {
-            m_LastPadTile=m_XpadCoord+i;
+            m_LastPadTile=m_YpadCoord+i;
         }
     }
 }
 void pong::pong_movement(int movement)
 {
-    if((m_XpadCoord==14 && movement==1) || ( m_XpadCoord==0 && movement== -1 )) //m_XpadCoord==14 because the body its 5 tiles long and m_XpadCoord==0 because the first tile is the head
+    if((m_YpadCoord==14 && movement==1) || ( m_YpadCoord==0 && movement== -1 )) //m_YpadCoord==14 because the body its 5 tiles long and m_XpadCoord==0 because the first tile is the head
        {
-        m_XpadCoord=m_XpadCoord;
+        m_YpadCoord=m_YpadCoord;
        }
     else
     {
-        m_XpadCoord+=movement;
+        m_YpadCoord+=movement;
         if(movement>0)
         {
-            m_map[m_XpadCoord+m_padSize-1][m_YpadCoord]='|'; 
-            m_map[m_XpadCoord-1][m_YpadCoord]=' ';
+            m_map[m_YpadCoord+m_padSize-1][m_XpadCoord]='|'; 
+            m_map[m_YpadCoord-1][m_XpadCoord]=' ';
         }
         else
         {
-            m_map[m_XpadCoord][m_YpadCoord]='|';
-            m_map[m_XpadCoord+m_padSize][m_YpadCoord]=' ';   
+            m_map[m_YpadCoord][m_XpadCoord]='|';
+            m_map[m_YpadCoord+m_padSize][m_XpadCoord]=' ';   
         }
     }
 }
@@ -119,26 +120,46 @@ void pong::detect_keyboard()
 }
 void pong::computer_algorithm()
 {
-  
-    
-    std::this_thread::sleep_for(std::chrono::milliseconds(16));
-    /*float current_distance=( computer.m_XpadCoord * Ball.m_Xball + computer.m_LastPadTile * Ball.m_Yball ) / (sqrt ( pow ( computer.m_XpadCoord , 2 ) + pow ( computer.m_LastPadTile ,2 ) ) );
-    float potential_up_distance= ( ( computer.m_XpadCoord + 1 ) * Ball.m_Xball + ( 1 + computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord + 1 ) , 2 ) + pow ( (computer.m_LastPadTile + 1 ) ,2 ) ) );
-    float potential_down_distance= ( ( computer.m_XpadCoord - 1 ) * Ball.m_Xball + ( 1 - computer.m_LastPadTile ) * Ball.m_Yball ) / (sqrt ( pow ( ( computer.m_XpadCoord - 1 ) , 2 ) + pow ( (computer.m_LastPadTile - 1 ) ,2 ) ) );*/
-    if( Ball.m_Xball< computer.m_XpadCoord)
+    std::this_thread::sleep_for(std::chrono::milliseconds(32));
+    if(Ball.m_YcurrentMove == -1)
     {
+        if( Ball.m_Xball< computer.m_YpadCoord)
+        {
        
-          computer.computer_movement(-1);
+            computer.computer_movement(-1);
+        }
+        else if(Ball.m_Xball > computer.m_YpadCoord-4)
+        {
+            computer.computer_movement(1);
+        }
     }
-    else if(Ball.m_Xball > computer.m_XpadCoord-4)
-    {
-          computer.computer_movement(1);
-    }
-    
+    else
+        {
+            //surprinsgly important
+        }
 } 
 void pong::computer_movement(int movement)
 {
      std::this_thread::sleep_for(std::chrono::milliseconds(16));
      computer.pong_movement(movement);
+}
+void pong::reset()
+{
+     for(int i=0;i<m_height;++i)
+    {
+        for(int j=0;j<m_width;++j)
+        {
+            if(j==15)
+            {
+                m_map[i][j]='#';
+            }
+            else
+            {
+                m_map[i][j]=' ';
+            }
+        }
+    }
+    player.m_YpadCoord=10;
+    computer.m_YpadCoord=10;
 }
 

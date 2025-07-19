@@ -3,8 +3,9 @@
 class ball:public pong{
 protected:
     static int m_XcurrentMove;
-    static int m_YcurrentMove;
+    
 public:
+    static int m_YcurrentMove;
     static int m_Xball;
     static int m_Yball;
     ball();
@@ -14,5 +15,6 @@ public:
     static void ball_movement();
     static void check_colision();
     static bool const GameOver_Check();
-    void GamePlay();
+    static void GamePlay();
+    static void reset();
 };

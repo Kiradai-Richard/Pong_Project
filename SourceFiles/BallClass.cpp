@@ -1,5 +1,6 @@
 #include<iostream>
 #include<chrono>
+#include<memory>
 #include<thread>
 #include "ballClass.h"
 int ball:: m_Xball(10);
@@ -54,7 +55,7 @@ void ball::check_colision()
         m_Yball+=m_YcurrentMove;
 
     }
-    else if(m_Xball-1 ==0 || m_Xball==m_height-1)
+    else if(m_Xball ==0 || m_Xball==m_height)
     {
          m_XcurrentMove*= -1;
          m_Xball+=m_XcurrentMove;
@@ -63,10 +64,19 @@ void ball::check_colision()
 const bool ball::GameOver_Check()
 {
     int YpadCoord=29;
-    if((m_Yball==0 && m_map[m_Xball][m_Yball]!='|') || (m_Yball==YpadCoord && m_map[m_Xball][m_Yball]!='|'))
-        return true;
+    if((m_Yball==0 && m_map[m_Xball][m_Yball]!='|')) //|| (m_Yball==YpadCoord && m_map[m_Xball][m_Yball]!='|'))
+        {
+            player.score++;
+            return true;
+        }
+    else if(m_Yball==YpadCoord && m_map[m_Xball][m_Yball]!='|')
+        {
+            computer.score++;
+            return true;
+        }
     else
         return false;
+      
 }
 void ball::GamePlay() 
 {
@@ -81,5 +91,13 @@ void ball::GamePlay()
         check_colision();
         std::thread(map_print).join();
     }
+}
+void ball::reset()
+{
+    m_Xball=10;
+    m_Yball=15;
+    m_XcurrentMove=0;
+    m_YcurrentMove=0;
+    ball_launch();
 }
 
